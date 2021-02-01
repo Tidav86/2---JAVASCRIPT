@@ -20,14 +20,76 @@
     <title>ÉVALUATION JAVASCRIPT</title>
   </head>
   <body>
-    <ion-grid>
-      <ion-row>
+    <ion-grid class="wrapper ion-text-uppercase ion-text-center"">
+    <ion-row class="ion-align-items-center">
         <ion-col>
-          <div class="newGame ion-text-center">
-            <h3>New Game</h3>
-          </div>
+        <div> 
+            <ion-button id="ButtonNewGame" type="button"> 
+                <ion-icon name="add-circle-outline" color="danger"> 
+                </ion-icon>
+                NEW GAME 
+            </ion-button> 
+        </div>
         </ion-col>
-      </ion-row>
+    </ion-row>
+    <ion-row class="Players">
+        <ion-col size="4">
+            <div class="PlayerName">
+                PLAYER 1 <span>&#128308</span>
+            </div>
+        </ion-col>
+        <ion-col size="4"offset="4"> 
+            <div class="PlayerName">
+                PLAYER 2
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+        <ion-col>
+            <div class="GlobalPlayer">
+                <p id="GlobalPlayer1">43</p>
+            </div>
+        </ion-col>
+        <ion-col>
+            <p id="score"></p>
+        </ion-col>
+        <ion-col>
+            <div class="GlobalPlayer">
+                <p id="GlobalPlayer2" >72</p>
+            </div>
+        </ion-col>
+    </ion-row>
+    
+    <ion-row class="Current">
+        <ion-col size="4">
+            <div class="CurrentScore">
+                <p>CURRENT</p>
+                <p id="RoundPlayer1">11</p>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div>
+                <ion-button id="ButtonRollDice" class="ion-align-items-start" type="button"> 
+                    <ion-icon name="sync-outline" color="danger"> 
+                    </ion-icon>
+                    Roll Dice 
+                </ion-button>
+            </div>
+            <div>
+                <ion-button id="ButtonHold" class="ion-align-items-end"type="button"> 
+                    <ion-icon name="download-outline" color="danger"> 
+                    </ion-icon>
+                    HOLD
+                </ion-button>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div class="CurrentScore">
+                <p>CURRENT</p>
+                <p id="RoundPlayer2">0</p>
+            </div>
+        </ion-col>
+    </ion-row>
     </ion-grid>
 
     <!-- SCRIPTS LOADING -->
@@ -35,12 +97,12 @@
     <script src="js/script.js"></script>
     <!-- IONIC -->
     <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
     ></script>
     <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    nomodule
+    src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
     ></script>
   </body>
 </html>
