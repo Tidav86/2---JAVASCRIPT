@@ -3,10 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--POLICES-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- IONIC -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+
     <title>ÉVALUATION JAVASCRIPT</title>
   </head>
   <body>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="newGame ion-text-center">
+            <h3>New Game</h3>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- SCRIPTS LOADING -->
     <!--JAVASCRIPT-->
     <script src="js/script.js"></script>
+    <!-- IONIC -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
   </body>
 </html>
