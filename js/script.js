@@ -5,25 +5,35 @@ let currentPlayer1 = document.getElementById("RoundPlayer1");
 let currentPlayer2 = document.getElementById("RoundPlayer2");
 let score = document.getElementById("score")
 
-// Initialisation des valeurs à 0
-    globalPlayer1.innerHTML = 0;
-    globalPlayer2.innerHTML = 0;
-    currentPlayer1.innerHTML = 0;
-    currentPlayer2.innerHTML = 0;
+// Initialisation du selecteur du Player
+const selecteurP1 = document.getElementById("SelecteurP1");
+const selecteurP2 = document.getElementById("SelecteurP2")
+selecteurP1.classList.add("show");
+selecteurP2.classList.add("hide");
 
-// // Variable utile pour le lancer de dés
-// let roll = Math.floor(Math.random()*6)+1;
+// Initialisation des valeurs à 0
+globalPlayer1.innerHTML = 0;
+globalPlayer2.innerHTML = 0;
+currentPlayer1.innerHTML = 0;
+currentPlayer2.innerHTML = 0;
+
 
 // New Game Parameter
 let btnNewGame = document.querySelector("#ButtonNewGame");
 
 btnNewGame.addEventListener("click", () => {
     if(confirm("Voulez vous vraiment recommencer la partie ?")){
-    // Récupération des valeurs à réinitialiser
+    // Remise à 0 des valeurs
         globalPlayer1.innerHTML = 0;
         globalPlayer2.innerHTML = 0;
         currentPlayer1.innerHTML = 0;
         currentPlayer2.innerHTML = 0;
+    //  Réinitialisation de l'affichage du dé
+        dice = document.querySelector("#score > img");
+        score.removeChild(dice);
+    // Position du sélecteur
+        selecteurP1.classList.replace("hide","show");
+        selecteurP2.classList.replace("show","hide");
     }
 })
 
@@ -39,16 +49,33 @@ btnRollDice.addEventListener("click", () => {
     if(!isScore){
         x.setAttribute("src","./images/Dice-"+roll+".png");
         score.appendChild(x);
-        currentPlayer1.textContent = Number(currentPlayer1.textContent) + roll;
+        if(selecteurP1.classList.contains("show") && selecteurP2.classList.contains("hide") == true){
+            currentPlayer1.textContent = Number(currentPlayer1.textContent) + roll;
+        } else if (selecteurP1.classList.contains("hide") && selecteurP2.classList.contains("show") == true){
+            currentPlayer2.textContent = Number(currentPlayer2.textContent) + roll;
+        }
+        
     } else {
         score.removeChild(isScore);
         x.setAttribute("src","./images/Dice-"+roll+".png");
         score.appendChild(x);
-        currentPlayer1.textContent = Number(currentPlayer1.textContent) + roll;
+        if(selecteurP1.classList.contains("show") && selecteurP2.classList.contains("hide") == true){
+            currentPlayer1.textContent = Number(currentPlayer1.textContent) + roll;
+        } else if (selecteurP1.classList.contains("hide") && selecteurP2.classList.contains("show") == true){
+            currentPlayer2.textContent = Number(currentPlayer2.textContent) + roll;
+        }
     }
 
     if(roll === 1) {
-        currentPlayer1.textContent = 0;
+        if(selecteurP1.classList.contains("show") && selecteurP2.classList.contains("hide") == true){
+            currentPlayer1.textContent = 0;
+            selecteurP1.classList.replace("show","hide");
+            selecteurP2.classList.replace("hide","show");
+        } else if (selecteurP1.classList.contains("hide") && selecteurP2.classList.contains("show") == true){
+            currentPlayer2.textContent = 0;
+            selecteurP1.classList.replace("hide","show");
+            selecteurP2.classList.replace("show","hide");
+        }
     }
 })
 
@@ -56,5 +83,23 @@ btnRollDice.addEventListener("click", () => {
 let btnHold = document.querySelector("#ButtonHold");
 
 btnHold.addEventListener("click", () => {
-
+    if(selecteurP1.classList.contains("show") && selecteurP2.classList.contains("hide") == true){
+        globalPlayer1.textContent = Number(currentPlayer1.textContent) + Number(globalPlayer1.textContent);
+        currentPlayer1.textContent = 0;
+        selecteurP1.classList.replace("show","hide");
+        selecteurP2.classList.replace("hide","show");
+        //  Réinitialisation de l'affichage du dé
+        dice = document.querySelector("#score > img");
+        score.removeChild(dice);
+    } else if (selecteurP1.classList.contains("hide") && selecteurP2.classList.contains("show") == true){
+        globalPlayer2.textContent = Number(currentPlayer2.textContent) + Number(globalPlayer2.textContent);
+        currentPlayer2.textContent = 0;
+        selecteurP1.classList.replace("hide","show");
+        selecteurP2.classList.replace("show","hide");
+        //  Réinitialisation de l'affichage du dé
+        dice = document.querySelector("#score > img");
+        score.removeChild(dice);
+    }
+    
+    
 })

@@ -74,6 +74,13 @@ p {
   vertical-align: middle;
 }
 
+.PlayerName .hide {
+  display: none;
+}
+.PlayerName .show {
+  display: inline;
+}
+
 .GlobalPlayer {
   margin: 3rem 0;
 }
