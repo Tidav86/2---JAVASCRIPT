@@ -19,77 +19,86 @@ p {
 
 .wrapper {
   height: 80%;
-  background-color: #fff;
   margin: 3em;
   padding: 2rem;
 }
 
-#ButtonNewGame {
+#player-turn {
+  background: linear-gradient(to left, white 50%, rgb(210, 210, 210) 50%);
+}
+
+#btn-new-game {
   margin-bottom: 2rem;
   font-size: 1.5rem;
   font-weight: 400;
   --color: rgb(151, 150, 150);
   --background: white;
   --box-shadow: none;
+  height: 3rem;
+  border: 3px solid rgb(150, 150, 150);
+  border-radius: 2px;
 }
 
-#ButtonNewGame ion-icon {
+#btn-new-game ion-icon {
   font-size: 2.5rem;
   margin-right: 1rem;
 }
 
-#ButtonRollDice,
-#ButtonHold {
+#btn-roll-dice,
+#btn-hold {
   font-size: 1.5rem;
   font-weight: 200;
   --color: rgb(150, 150, 150);
   --background: white;
   --box-shadow: none;
+  height: 3rem;
+  border: 3px solid rgb(150, 150, 150);
+  border-radius: 2px;
 }
 
-#ButtonRollDice {
+#btn-roll-dice {
   margin: 0;
   margin-bottom: 1rem;
 }
 
-#ButtonHold {
+#btn-hold {
   margin: 0;
   margin-top: 1rem;
 }
 
-#ButtonRollDice ion-icon,
-#ButtonHold ion-icon {
+#btn-roll-dice ion-icon,
+#btn-hold ion-icon {
   font-size: 2.5rem;
   margin-right: 1rem;
 }
 
-.PlayerName {
+.player-name {
   font-size: 3rem;
   font-weight: 500;
 }
-.PlayerName span {
+.player-name span {
   margin-left: 1rem;
   vertical-align: middle;
 }
 
-.PlayerName .hide,
-.Gagnant.hide {
+.player-name .hide,
+.gagnant.hide {
   display: none;
 }
-.PlayerName .show,
-.Gagnant .show {
+.player-name .show,
+.gagnant.show {
   display: inline;
 }
-.Winners {
+.winners {
   height: 2rem;
 }
-.Gagnant {
+.gagnant {
   font-size: 2rem;
 }
-.GlobalPlayer {
+.global-player {
   margin: 3rem 0;
 }
-.GlobalPlayer > p {
+.global-player > p {
   font-size: 5rem;
   font-weight: 100;
   color: rgb(253, 90, 90);
@@ -99,13 +108,13 @@ p {
   margin: auto;
 }
 
-.Scores {
+.scores {
   margin-top: 1rem;
 }
-.Current {
+.current {
   margin: 4rem 0 0 0;
 }
-.CurrentScore {
+.current-score {
   color: rgb(247, 30, 30);
   background-color: rgb(253, 90, 90);
   font-weight: bold;
@@ -113,8 +122,8 @@ p {
   margin: auto;
   width: 50%;
 }
-.CurrentScore #RoundPlayer1,
-.CurrentScore #RoundPlayer2 {
+.current-score #round-player1,
+.current-score #round-player2 {
   font-size: 2.5rem;
   color: #fff;
   padding-top: 1rem;

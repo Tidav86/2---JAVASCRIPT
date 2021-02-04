@@ -20,11 +20,11 @@
     <title>ÉVALUATION JAVASCRIPT</title>
   </head>
   <body>
-    <ion-grid class="wrapper ion-text-uppercase ion-text-center"">
+    <ion-grid id="player-turn" class="wrapper ion-text-uppercase ion-text-center"">
     <ion-row class="ion-align-items-center">
         <ion-col>
         <div> 
-            <ion-button id="ButtonNewGame" type="button"> 
+            <ion-button id="btn-new-game" type="button"> 
                 <ion-icon name="add-circle-outline" color="danger"> 
                 </ion-icon>
                 NEW GAME 
@@ -32,63 +32,63 @@
         </div>
         </ion-col>
     </ion-row>
-    <ion-row class="Players">
+    <ion-row class="players">
         <ion-col size="4">
-            <div id="Player1" class="PlayerName">
-                PLAYER 1 <span id="SelecteurP1">&#128308</span>
+            <div id="player1" class="player-name">
+                PLAYER 1 <span id="selecteur-player1">&#128308</span>
             </div>
         </ion-col>
         <ion-col size="4"offset="4"> 
-            <div id="Player2" class="PlayerName">
-                PLAYER 2 <span id="SelecteurP2">&#128308</span>
+            <div id="player2" class="player-name">
+                PLAYER 2 <span id="selecteur-player2">&#128308</span>
             </div>
         </ion-col>
     </ion-row>
-    <ion-row class="Winners">
+    <ion-row class="winners">
         <ion-col size="4">
-            <div id="GagnantPlayer1" class="Gagnant"> GAGNANT !!!</div>
+            <div id="gagnant-player1" class="gagnant"> gagnant!!!</div>
         </ion-col>
         <ion-col size="4"offset="4"> 
-            <div id="GagnantPlayer2" class="Gagnant"> GAGNANT !!!</div>
+            <div id="gagnant-player2" class="gagnant"> gagnant!!!</div>
         </ion-col>
     </ion-row>
 
     
 
 
-    <ion-row class="Scores ion-align-items-center">
+    <ion-row class="scores ion-align-items-center">
         <ion-col>
-            <div class="GlobalPlayer">
-                <p id="GlobalPlayer1"></p>
+            <div class="global-player">
+                <p id="global-player1"></p>
             </div>
         </ion-col>
-        <ion-col>
+        <ion-col class="scoreCase">
             <p id="score"></p>
         </ion-col>
         <ion-col>
-            <div class="GlobalPlayer">
-                <p id="GlobalPlayer2" ></p>
+            <div class="global-player">
+                <p id="global-player2" ></p>
             </div>
         </ion-col>
     </ion-row>
     
-    <ion-row class="Current">
+    <ion-row class="current">
         <ion-col size="4">
-            <div class="CurrentScore">
+            <div class="current-score">
                 <p>CURRENT</p>
-                <p id="RoundPlayer1"></p>
+                <p id="round-player1"></p>
             </div>
         </ion-col>
         <ion-col size="4">
             <div>
-                <ion-button id="ButtonRollDice" class="ion-align-items-start" type="button"> 
+                <ion-button id="btn-roll-dice" class="ion-align-items-start" type="button"> 
                     <ion-icon name="sync-outline" color="danger"> 
                     </ion-icon>
                     Roll Dice 
                 </ion-button>
             </div>
             <div>
-                <ion-button id="ButtonHold" class="ion-align-items-end"type="button"> 
+                <ion-button id="btn-hold" class="ion-align-items-end"type="button"> 
                     <ion-icon name="download-outline" color="danger"> 
                     </ion-icon>
                     HOLD
@@ -96,9 +96,9 @@
             </div>
         </ion-col>
         <ion-col size="4">
-            <div class="CurrentScore">
+            <div class="current-score">
                 <p>CURRENT</p>
-                <p id="RoundPlayer2"></p>
+                <p id="round-player2"></p>
             </div>
         </ion-col>
     </ion-row>
