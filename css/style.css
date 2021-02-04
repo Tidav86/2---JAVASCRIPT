@@ -42,7 +42,7 @@ p {
 #ButtonHold {
   font-size: 1.5rem;
   font-weight: 200;
-  --color: rgb(151, 150, 150);
+  --color: rgb(150, 150, 150);
   --background: white;
   --box-shadow: none;
 }
@@ -63,24 +63,29 @@ p {
   margin-right: 1rem;
 }
 
-.Players {
-  margin-bottom: 1rem;
-}
 .PlayerName {
   font-size: 3rem;
+  font-weight: 500;
 }
 .PlayerName span {
   margin-left: 1rem;
   vertical-align: middle;
 }
 
-.PlayerName .hide {
+.PlayerName .hide,
+.Gagnant.hide {
   display: none;
 }
-.PlayerName .show {
+.PlayerName .show,
+.Gagnant .show {
   display: inline;
 }
-
+.Winners {
+  height: 2rem;
+}
+.Gagnant {
+  font-size: 2rem;
+}
 .GlobalPlayer {
   margin: 3rem 0;
 }
@@ -93,8 +98,12 @@ p {
   width: 8rem;
   margin: auto;
 }
+
+.Scores {
+  margin-top: 1rem;
+}
 .Current {
-  margin: 8rem 0 0 0;
+  margin: 4rem 0 0 0;
 }
 .CurrentScore {
   color: rgb(247, 30, 30);
